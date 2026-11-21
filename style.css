@@ -1,0 +1,743 @@
+/* =========================================
+   ตัวแปรสีและฟอนต์หลัก (Elysia Pastel Theme)
+========================================= */
+:root {
+  --pink-primary: #ec4899;
+  --pink-soft: #f472b6;
+  --pink-light: #fbcfe8;
+  --purple-soft: #c084fc;
+  --gold-accent: #d97706;
+  --gold-light: #fef3c7;
+  --text-dark: #3b1d36;
+  --text-muted: #704868;
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(244, 114, 182, 0.35);
+  --shadow-soft: 0 12px 32px rgba(236, 72, 153, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Prompt', sans-serif;
+  background: linear-gradient(135deg, #fff8fc 0%, #fce7f3 50%, #f3e8ff 100%);
+  color: var(--text-dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tab-radio {
+  display: none;
+}
+
+/* =========================================
+   เอฟเฟกต์กลีบดอกไม้และคริสตัลลอย (Pure CSS)
+========================================= */
+.particles-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  top: -30px;
+  color: var(--pink-soft);
+  opacity: 0.45;
+  animation: floatDown linear infinite;
+}
+
+.p1  { left: 6%;  font-size: 16px; animation-duration: 11s; animation-delay: 0s; }
+.p2  { left: 15%; font-size: 14px; animation-duration: 14s; animation-delay: 2s; }
+.p3  { left: 26%; font-size: 18px; animation-duration: 10s; animation-delay: 4s; }
+.p4  { left: 38%; font-size: 15px; animation-duration: 16s; animation-delay: 1s; }
+.p5  { left: 49%; font-size: 20px; animation-duration: 12s; animation-delay: 3s; }
+.p6  { left: 60%; font-size: 14px; animation-duration: 15s; animation-delay: 5s; }
+.p7  { left: 71%; font-size: 17px; animation-duration: 11s; animation-delay: 2.5s; }
+.p8  { left: 82%; font-size: 15px; animation-duration: 13s; animation-delay: 6s; }
+.p9  { left: 90%; font-size: 19px; animation-duration: 12s; animation-delay: 1.5s; }
+.p10 { left: 95%; font-size: 14px; animation-duration: 15s; animation-delay: 4.5s; }
+
+@keyframes floatDown {
+  0%   { transform: translateY(-30px) rotate(0deg); opacity: 0; }
+  15%  { opacity: 0.55; }
+  100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+}
+
+/* =========================================
+   แถบนำทาง (Navbar)
+========================================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 248, 252, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--pink-primary);
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.crystal-icon {
+  color: var(--purple-soft);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.25s;
+}
+
+.nav-links a:hover {
+  color: var(--pink-primary);
+}
+
+/* =========================================
+   Hero Section
+========================================= */
+.hero {
+  position: relative;
+  padding: 70px 0 90px;
+  z-index: 1;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.3) 0%, rgba(192, 132, 252, 0.15) 60%, transparent 75%);
+  filter: blur(30px);
+  z-index: -1;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #fce7f3, #f3e8ff);
+  border: 1px solid var(--glass-border);
+  color: var(--pink-primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4.2rem;
+  line-height: 1.05;
+  color: var(--text-dark);
+  margin-bottom: 18px;
+}
+
+.title-en {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--pink-primary), var(--purple-soft), var(--gold-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 6px;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  max-width: 520px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.98rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--pink-primary), var(--purple-soft));
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--pink-primary);
+  border: 1.5px solid var(--pink-soft);
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.crystal-frame {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(236, 72, 153, 0.4);
+}
+
+.ring-outer {
+  inset: 0;
+  animation: spinSlow 24s linear infinite;
+}
+
+.ring-inner {
+  inset: 28px;
+  border-color: rgba(192, 132, 252, 0.5);
+  animation: spinSlow 18s linear infinite reverse;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 390px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 24px rgba(236, 72, 153, 0.25));
+  animation: floatCharacter 4.5s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes floatCharacter {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* =========================================
+   Section ทั่วไป & Glass Card
+========================================= */
+.section {
+  position: relative;
+  padding: 80px 0;
+  z-index: 1;
+}
+
+.section-alt {
+  background: rgba(255, 255, 255, 0.45);
+  border-top: 1px solid rgba(244, 114, 182, 0.18);
+  border-bottom: 1px solid rgba(244, 114, 182, 0.18);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.section-tag {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--pink-primary);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.section-header h2 {
+  font-size: 2.1rem;
+  color: var(--text-dark);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* =========================================
+   About Grid
+========================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+}
+
+.lore-card h3,
+.specs-card h3 {
+  font-size: 1.35rem;
+  color: var(--pink-primary);
+  margin-bottom: 16px;
+}
+
+.lore-card p {
+  margin-bottom: 14px;
+  color: var(--text-muted);
+}
+
+.specs-list {
+  list-style: none;
+}
+
+.specs-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(236, 72, 153, 0.22);
+  font-size: 0.95rem;
+}
+
+.specs-list li:last-child {
+  border-bottom: none;
+}
+
+.specs-list span {
+  color: var(--text-muted);
+}
+
+/* =========================================
+   Battlesuits Section (Pure CSS Tab Switching)
+========================================= */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: 1.5px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text-dark);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  user-select: none;
+}
+
+/* ไฮไลต์ปุ่มแท็บที่ถูกเลือกด้วย CSS */
+#tab-hoh:checked ~ .tabs .label-hoh,
+#tab-mpe:checked ~ .tabs .label-mpe {
+  background: linear-gradient(135deg, var(--pink-primary), var(--purple-soft));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.28);
+}
+
+/* ซ่อนการ์ดชุดสูทเริ่มต้น แล้วแสดงเฉพาะการ์ดที่ตรงกับ Radio */
+.suit-showcase {
+  display: none;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: 36px;
+  animation: fadeInCard 0.4s ease;
+}
+
+#tab-hoh:checked ~ .panel-hoh,
+#tab-mpe:checked ~ .panel-mpe {
+  display: grid;
+}
+
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.suit-image-box {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(252, 231, 243, 0.5));
+  overflow: hidden;
+  padding: 16px;
+}
+
+.suit-aura {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(18px);
+  z-index: 0;
+}
+
+.aura-hoh {
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.45) 0%, rgba(192, 132, 252, 0.25) 55%, transparent 75%);
+}
+
+.aura-mpe {
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.45) 0%, rgba(251, 191, 36, 0.25) 55%, transparent 75%);
+}
+
+.crystal-ring {
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 24px rgba(244, 114, 182, 0.35);
+  z-index: 1;
+}
+
+.suit-character-img {
+  position: relative;
+  z-index: 2;
+  max-height: 350px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 20px rgba(192, 132, 252, 0.3));
+  animation: floatCharacter 4.5s ease-in-out infinite;
+}
+
+.suit-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.pill {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.pill.rank { background: var(--gold-light); color: var(--gold-accent); }
+.pill.type { background: #fce7f3; color: var(--pink-primary); }
+.pill.element { background: #f3e8ff; color: #7e22ce; }
+
+.suit-info h3 {
+  font-size: 1.8rem;
+  color: var(--text-dark);
+}
+
+.suit-subtitle {
+  color: var(--pink-primary);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.suit-desc {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.skills-box {
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 16px;
+  padding: 18px 20px;
+  border: 1px solid rgba(244, 114, 182, 0.25);
+}
+
+.skills-box h4 {
+  font-size: 1rem;
+  color: var(--pink-primary);
+  margin-bottom: 10px;
+}
+
+.skills-box ul {
+  padding-left: 18px;
+  color: var(--text-muted);
+  font-size: 0.93rem;
+}
+
+.skills-box li {
+  margin-bottom: 6px;
+}
+
+/* =========================================
+   Quotes Section (Pure CSS Slider)
+========================================= */
+.quote-slider {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--pink-soft);
+}
+
+.quote-item {
+  display: none;
+  animation: fadeInCard 0.35s ease;
+}
+
+#q1:checked ~ .quote-1,
+#q2:checked ~ .quote-2,
+#q3:checked ~ .quote-3 {
+  display: block;
+}
+
+.quote-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin: 8px 0 14px;
+}
+
+.quote-context {
+  color: var(--pink-primary);
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+}
+
+.quote-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--pink-light);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#q1:checked ~ .quote-dots .d1,
+#q2:checked ~ .quote-dots .d2,
+#q3:checked ~ .quote-dots .d3 {
+  background: var(--pink-primary);
+  transform: scale(1.25);
+}
+
+/* =========================================
+   Fan Corner (Pure CSS Heart Toggle)
+========================================= */
+.fan-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 28px;
+}
+
+.love-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.love-box h3,
+.message-box h3 {
+  color: var(--pink-primary);
+  margin-bottom: 10px;
+}
+
+.love-box p {
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+.love-button {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ec4899, #f43f5e);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(244, 63, 94, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  user-select: none;
+}
+
+.love-button:hover {
+  transform: translateY(-2px);
+}
+
+#love-toggle:checked + .love-button {
+  background: linear-gradient(135deg, #db2777, #9333ea);
+  transform: scale(1.05);
+}
+
+.love-counter {
+  margin-top: 18px;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.love-counter strong {
+  color: var(--pink-primary);
+  font-size: 1.25rem;
+}
+
+.count-after {
+  display: none;
+}
+
+#love-toggle:checked ~ .love-counter .count-before {
+  display: none;
+}
+
+#love-toggle:checked ~ .love-counter .count-after {
+  display: inline;
+}
+
+.fan-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.fan-form input,
+.fan-form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.9);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.fan-form input:focus,
+.fan-form textarea:focus {
+  border-color: var(--pink-primary);
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.msg-item {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+  padding: 12px 16px;
+  border: 1px solid rgba(244, 114, 182, 0.2);
+}
+
+.msg-item strong {
+  color: var(--pink-primary);
+  font-size: 0.92rem;
+}
+
+.msg-item p {
+  font-size: 0.93rem;
+  color: var(--text-dark);
+  margin-top: 2px;
+}
+
+/* =========================================
+   Footer & Responsive
+========================================= */
+.footer {
+  text-align: center;
+  padding: 28px 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+@media (max-width: 860px) {
+  .hero-grid,
+  .about-grid,
+  .suit-showcase,
+  .fan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 3.1rem;
+  }
+
+  .crystal-frame {
+    width: 300px;
+    height: 300px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
